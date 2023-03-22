@@ -26,16 +26,16 @@
     <div class="container-content">
 
         <ul id="mensagens">
-
+            
         </ul>
 
-
+        
     </div>
 
-    </ul>
+</ul>
     <div class="text-container">
         <form id="form">
-            <textarea id="msg" autofocus autocomplete="off" placeholder="Digite uma mensagem"></textarea>
+            <input type="text" id="msg" autofocus autocomplete="off" placeholder="Digite uma mensagem">
             <button type="submit">Enviar</button>
 
 
@@ -44,7 +44,7 @@
 
     <script>
 
-
+        
 
         $(function () {
             const socket = io()

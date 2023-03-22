@@ -57,7 +57,6 @@
 
                     $('#msg').keypress(function (evt) {
                         socket.emit('status', `${socket.nickname} está digitando...`)
-                        
                     })
 
                     $('#msg').keyup(function (evt) {

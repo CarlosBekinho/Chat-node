@@ -11,17 +11,22 @@ CSS Adatado de https://github.com/Roger-Melo/lyrics-search/blob/master/style.css
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: rgb(211, 211, 211);
+  background-color: #000;
+
 }
 
 ul {
     list-style: none;
-    text-indent: -2em; 
+    /* text-indent: 0rem;  */
+    border-radius: 10px;
+    
+   
 }
 
-ul li:before {
-    content: "\1F63A";
-    margin: 0 0.5em;
+#mensagens li:before {
+    content: "\1F918";
+    margin: 0 0.5em 0 0 ;
+    font-size: 1.2rem;
 }
 
 button {
@@ -43,6 +48,9 @@ header {
   justify-content: center;
   padding: 10px 0;
   position: relative;
+  background-color: #7d7bff;
+
+  color: whitesmoke;
 }
 
 header * {
@@ -50,11 +58,70 @@ header * {
 }
 
 header h1 {
-  margin: 0 0 30px;
+  margin: 0;
+  
+
 }
 
+.container-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+.text-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  
+}
+
+#mensagens{
+  overflow-y: auto;
+  height: 75vh;
+  background-color: #2c2828;
+  width: 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  
+ 
+}
+
+#mensagens li{
+  height: auto;
+  width: max-content;
+  background-color: #64039c;
+  margin: 15px 0 0 0;
+  border-radius: 30px;
+  padding: 0 0 5px 20px;
+  inline-size: 300px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.status-container{
+  height: 10px;
+  margin: 5px 0 0 0;
+  
+}
+
+#status{
+  text-align: center;
+  color: whitesmoke;
+}
+
+
+
+
+
+
 form {
-  position: relative;
+  position: fixed;
   width: 500px;
   max-width: 100%;
 }
@@ -63,18 +130,51 @@ form input {
   border: 0;
   border-radius: 50px;
   font-size: 16px;
-  padding: 15px 30px;
+  padding: 15px 10px;
   width: 100%;
+  position: absolute;
+  justify-self: center;
+  align-self: flex-end;
 }
 
 form button {
   position: absolute;
   top: 2px;
   right: 1px;
-  background-color: #10cce0;
+  background-color: #3f86f1;
   border: 0;
   border-radius: 50px;
   color: #fff;
   font-size: 16px;
   padding: 13px 30px;
+  justify-self: end;
+}
+
+@media(max-width: 936px){
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  
+  }
+
+  form {
+    position: fixed;
+    width: 300px;
+    max-width: 100%;
+  }
+
+  #mensagens{
+    height: 65vh;
+    width: fit-content;
+
+
+}
+
+#mensagens li{
+  inline-size: 220px;
+}
+
+
+
+
 }

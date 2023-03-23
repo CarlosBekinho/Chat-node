@@ -124,24 +124,23 @@ form {
   border: 0;
   border-radius: 50px;
   font-size: 16px;
-  padding: 5px 7px 0 20px;
+  border: solid 1px whitesmoke;
+  padding: 11px 20px;
   width: 100%;
   position: absolute;
-  text-indent: 1%;
-  resize:none;
-  overflow:hidden;
+  
 }
 
 form button {
   position: absolute;
-  top: 0.1rem;
-  right: 1px;
+  top: 2%;
+  right:-1px;
   background-color: #3f86f1;
   border: 0;
   border-radius: 50px;
   color: #fff;
   font-size: 16px;
-  padding: 11px 30px; 
+  padding: 12px 25px; 
 }
 
 @media(max-width: 936px){

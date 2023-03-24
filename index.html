@@ -9,14 +9,10 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
     <title>chat-nodeJs</title>
 </head>
 
-<body>
+<body onload="placeholderInput()">
     <header>
         <h1>Chat Carlos Bekinho</h1>
     </header>
@@ -24,70 +20,22 @@
         <div id="status"></div>
     </div>
     <div class="container-content">
+        <h1 class="name-title">Digite Seu Nome</h1>
 
-        <ul id="mensagens">
-            
+        <ul id="mensagens">  
+
         </ul>
-
-        
     </div>
 
 </ul>
     <div class="text-container">
         <form id="form">
-            <input type="text" id="msg" autofocus autocomplete="off" placeholder="Digite uma mensagem">
-            <button type="submit">Enviar</button>
-
-
+            <input type="text" id="msg" autofocus autocomplete="off">
+            <button class="enviarBtn" type="submit">Enviar</button>
         </form>
     </div>
 
-    <script>
-
-        
-
-        $(function () {
-            const socket = io()
-            socket.nickname = ''
-
-            $('#form').submit(function (evt) {
-                if (socket.nickname === '') {
-                    socket.nickname = $('#msg').val()
-                    socket.emit('login', socket.nickname)
-
-                    $('#msg').keypress(function (evt) {
-                        socket.emit('status', `${socket.nickname} está digitando...`)
-                    })
-
-                    $('#msg').keyup(function (evt) {
-                        socket.emit('status', '')
-
-                    })
-
-                    socket.on('status', function (msg) {
-                        $('#status').html(msg)
-                    })
-
-                } else {
-                    socket.emit('chat msg', $('#msg').val())
-                }
-
-                $('#msg').val('')
-                return false
-            })
-
-            socket.on('chat msg', function (msg) {
-                $('#mensagens').append($('<li>').text(msg))
-
-                $('#mensagens').animate({ scrollTop: $('#mensagens').get(0).scrollHeight }, 10);
-            })
-
-
-
-        })
-
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
